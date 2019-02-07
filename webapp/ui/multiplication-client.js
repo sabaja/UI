@@ -15,8 +15,8 @@ function updateMultiplication() {
 function updateResults(alias) {
     var userId = -1;
     $.ajax({
-        async: false,
         url: SERVER_URL + "/results?alias=" + alias,
+        async: false,
         success: function(data) {
             $('#results-div').show();
             $('#results-body').empty();
@@ -53,7 +53,7 @@ $(document).ready(function() {
 
         // Send the data using post
         $.ajax({
-            url: 'http://localhost:8080/results',
+            url: SERVER_URL + '/results',
             type: 'POST',
             data: JSON.stringify(data),
             contentType: "application/json; charset=utf-8",
