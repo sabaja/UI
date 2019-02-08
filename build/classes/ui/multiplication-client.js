@@ -47,6 +47,11 @@ $(document).ready(function() {
         var $form = $( this ),
             attempt = $form.find( "input[name='result-attempt']" ).val(),
             userAlias = $form.find( "input[name='user-alias']" ).val();
+        if(userAlias === undefined || userAlias === ""){
+        	$('#user-alias').attr('user-alias', 'empty_alias');
+        }else{
+        	$('#user-alias').attr('user-alias', 'user-alias');
+        }
 
         // Compose the data in the format that the API is expecting
         var data = { user: { alias: userAlias}, multiplication: {factorA: a, factorB: b}, resultAttempt: attempt};
